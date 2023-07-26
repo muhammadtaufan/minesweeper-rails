@@ -1,0 +1,12 @@
+<div class="flex flex-col items-center text-2xl gap-2 py-2">
+<div class="mx-auto w-1/2 py-2 px-3 space-y-4 border border-slate-300 shadow-sm rounded">
+  <h1 class="text-2xl font-bold">Generated Boards</h1>
+  <% @boards.each do |board| %>
+    <div class="border p-4 rounded-md shadow-sm space-y-2">
+      <h2 class="text-lg font-medium"><%= link_to board.name, board_path(board), class: "text-indigo-600 hover:text-indigo-500" %></h2>
+      <p class="text-sm text-gray-500">Created by: <%= board.email %></p>
+      <p class="text-sm text-gray-500">Created at: <%= board.created_at.strftime("%d %b %Y %H:%M") %></p>
+    </div>
+  <% end %>
+</div>
+</div>
