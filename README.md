@@ -1,24 +1,50 @@
-# README
+# Minesweeper Board Generator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is a simple Minesweeper board generator built with Ruby on Rails 7.0.6, Ruby 3.0.0, PostgreSQL as the database, and Tailwind CSS for styling.
 
-Things you may want to cover:
+# About
 
-* Ruby version
+This application allows users to generate simple Minesweeper boards. Users can specify the board's dimensions and the number of mines. The application will then generate a board with the specified parameters and display it to the user.
 
-* System dependencies
+## Prerequisites
 
-* Configuration
+- Ruby 3.0.0
+- Rails 7.0.6
+- PostgreSQL
+- Yarn
 
-* Database creation
+## Setup
 
-* Database initialization
+1. Clone the repository:
 
-* How to run the test suite
+```bash
+git clone https://gitlab.com/mtaufan.dev/minesweeper-rails.git
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+2. Navigate into the directory:
 
-* Deployment instructions
+```bash
+cd minesweeper
+```
 
-* ...
+3. Install the dependencies:
+
+```bash
+bundle install
+yarn install
+```
+
+4. Migration
+
+```bash
+rails db:create
+rails db:migrate
+```
+
+## Running the Application
+
+To run the application, use the following command:
+
+```bash
+./bin/dev
+```
