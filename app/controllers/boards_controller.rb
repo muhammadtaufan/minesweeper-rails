@@ -17,7 +17,11 @@ class BoardsController < ApplicationController
   end
 
   def index
-    @boards = Board.order(created_at: :desc).limit(10)
+    @boards = Board.order(created_at: :desc).page(params[:page]).per(5)
+  end
+
+  def all
+    @boards = Board.order(created_at: :desc)
   end
 
   private

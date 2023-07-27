@@ -4,7 +4,7 @@ RSpec.describe 'boards/index.html.erb', type: :view do
   let(:board) { create(:board) }
 
   before do
-    assign(:boards, [board])
+    assign(:boards, Kaminari.paginate_array([board]).page(1))
     render
   end
 
