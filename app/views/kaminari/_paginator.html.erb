@@ -14,7 +14,7 @@
         <% if page.current? %>
           <%= content_tag :span, page, class: 'text-blue-700 text-bold underline' %>
         <% else %>
-         <%= content_tag :span, page, class: 'hover:text-blue-700 hover:text-bold cursor-pointer' %>
+         <%= page_tag page %>
         <% end %>
       <% elsif !page.was_truncated? -%>
         <%= gap_tag %>
