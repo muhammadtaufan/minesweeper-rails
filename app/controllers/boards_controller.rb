@@ -17,7 +17,11 @@ class BoardsController < ApplicationController
   end
 
   def index
-    @boards = Board.order(created_at: :desc).page(params[:page]).per(5)
+    @boards = if params[:search]
+      Board.order(created_at: :desc).where('name LIKE ?', "%#{params[:search]}%").page(params[:page]).per(5)
+    else
+      Board.order(created_at: :desc).page(params[:page]).per(5)
+    end
   end
 
   def all
