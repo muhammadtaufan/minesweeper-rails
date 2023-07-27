@@ -4,9 +4,9 @@
   <p class="mb-4">Width: <%= @board.width %>, Height: <%= @board.height %>, Mines: <%= @board.mines %></p>
   <div class="border border-gray-300 rounded shadow p-4">
     <% @board.cells.split("\n").map { |row| row.chars }.each do |row| %>
-      <div class="flex">
+      <div class="flex cells">
         <% row.each do |cell| %>
-          <div class="<%= cell == '1' ? 'bg-white-400' : 'bg-slate-300' %> w-6 h-6 m-1 flex items-center justify-center">
+          <div class="<%= cell == '1' ? 'bg-white-400 mines' : 'bg-slate-300' %> w-6 h-6 m-1 flex items-center justify-center boards">
             <%= cell == '1' ? '💣' : '' %>
           </div>
         <% end %>

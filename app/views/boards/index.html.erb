@@ -1,6 +1,9 @@
 <div class="flex flex-col items-center text-2xl gap-2 py-2">
+<div class="flex justify-between items-center w-1/2 mt-4">
+<h1 class="text-2xl font-bold">Generated Boards</h1>
+<%= link_to 'New Board', new_board_path, class: 'bg-blue-500 hover:bg-blue-700 text-lg text-white py-1 px-2 rounded' %>
+</div>
 <div class="mx-auto w-1/2 py-2 px-3 space-y-4 border border-slate-300 shadow-sm rounded">
-  <h1 class="text-2xl font-bold">Generated Boards</h1>
   <% @boards.each do |board| %>
     <div class="border p-4 rounded-md shadow-sm space-y-2">
       <h2 class="text-lg font-medium"><%= link_to board.name, board_path(board), class: "text-indigo-600 hover:text-indigo-500" %></h2>
@@ -9,4 +12,5 @@
     </div>
   <% end %>
 </div>
+<%= link_to 'View all generated boards', boards_path, class: 'mt-4 text-blue-500' %>
 </div>
