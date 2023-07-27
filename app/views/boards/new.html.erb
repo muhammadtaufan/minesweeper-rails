@@ -1,32 +1,29 @@
 <div class="flex flex-col items-center text-2xl gap-2 py-2">
-    <h2> Create a new board </h2>
-    <%= form_with model: @board, local: true, class: "mx-auto w-1/2 py-2 px-3 space-y-4 border border-slate-300 shadow-sm rounded" do |form| %>
+  <div class="flex justify-between items-center w-1/2 mt-4">
+    <h1 class="text-2xl font-bold">Create a new board</h1>
+    <%= link_to 'List all boards', boards_path, class: 'bg-blue-500 hover:bg-blue-700 text-lg text-white py-1 px-2 rounded' %>
+  </div>
+  <%= form_with model: @board, local: true, class: "mx-auto w-1/2 py-2 px-3 space-y-4 border border-slate-300 shadow-sm rounded" do |form| %>
     <div>
-        <%= form.label :name, class: "block text-sm font-medium text-gray-700" %>
-        <%= form.text_field :name, required: true, class: "mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+      <%= form.label :name, class: "block text-sm font-medium text-gray-700" %>
+      <%= form.text_field :name, required: true, class: "mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
     </div>
-
     <div>
-        <%= form.label :email, class: "block text-sm font-medium text-gray-700" %>
-        <%= form.email_field :email, required: true, class: "mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+      <%= form.label :email, class: "block text-sm font-medium text-gray-700" %>
+      <%= form.email_field :email, required: true, class: "mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
     </div>
-
     <div>
-        <%= form.label :width, class: "block text-sm font-medium text-gray-700" %>
-        <%= form.number_field :width, required: true, class: "mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+      <%= form.label :width, class: "block text-sm font-medium text-gray-700" %>
+      <%= form.number_field :width, required: true, class: "mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
     </div>
-
     <div>
-        <%= form.label :height, class: "block text-sm font-medium text-gray-700" %>
-        <%= form.number_field :height, required: true, class: "mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+      <%= form.label :height, class: "block text-sm font-medium text-gray-700" %>
+      <%= form.number_field :height, required: true, class: "mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
     </div>
-
     <div>
-        <%= form.label :mines, class: "block text-sm font-medium text-gray-700" %>
-        <%= form.number_field :mines, required: true, class: "mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+      <%= form.label :mines, class: "block text-sm font-medium text-gray-700" %>
+      <%= form.number_field :mines, required: true, class: "mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
     </div>
-
     <%= form.submit "Generate Board", class: "mt-3 w-full px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
-    <% end %>
-    <%= link_to 'Back', boards_path, class: 'mt-4 text-blue-500' %>
+  <% end %>
 </div>
