@@ -9,21 +9,28 @@ class Board < ApplicationRecord
   def generate_cells
     cells = Array.new(height) { Array.new(width, 0) }
 
-    mines.times do
-      while true
-        row = rand(height)
-        col = rand(width)
-        if cells[row][col] == 0
-          cells[row][col] = 1
-          break
-        end
+    # create cell positions
+    all_positions = []
+    for row in 0...height
+      for col in 0...width
+        all_positions << [row, col]
       end
+    end
+
+    # generate random mine positions for cells board
+    mine_positions = all_positions.sample(mines)
+
+    # put mines inside board
+    mine_positions.each do |row, col|
+      cells[row][col] = 1
     end
 
     self.cells = cells.map(&:join).join("\n")
   end
 
   def mines_cannot_be_greater_than_cells
-    errors.add(:mines, "can't be greater than total cells") if mines > width * height
+    if width.present? && height.present? && mines.present? && (mines > width * height)
+      errors.add(:mines, "can't be greater than total cells")
+    end
   end
 end
