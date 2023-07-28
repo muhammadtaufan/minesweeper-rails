@@ -33,6 +33,5 @@ module Minesweeper
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-    config.x.app_config = config_for(:application)
   end
 end
