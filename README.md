@@ -43,6 +43,8 @@ rails db:migrate
 
 ## Running the Application
 
+This application uses environment variables for configuration. Before running the application, you need to set the database environment variables.
+
 To run the application, use the following command:
 
 ```bash
